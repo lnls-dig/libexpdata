@@ -33,7 +33,7 @@ for i=1:ndatasets
         freqset{i} = freq(2:end);
         spectrumset{i} = spectrumdata(2:end, :);
     elseif strcmpi(spectrum_method, 'dft')
-        [fft_data, freq] = fourierseries(data, Fs, @hamming);
+        [fft_data, freq] = fourierseries(data, Fs, hamming(npts));
         freqset{i} = freq(3:end);
         spectrumset{i} = fft_data(3:end, :);
     end
