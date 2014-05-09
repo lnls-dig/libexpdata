@@ -29,7 +29,7 @@ for i=1:ndatasets
 
     npts = size(data,1);
     if strcmpi(spectrum_method, 'rms') || strcmpi(spectrum_method, 'rms_reversed') || strcmpi(spectrum_method, 'psd')
-        [~, spectrumdata, ~, freq] = psdrms(data, 1/Fs, 1, high_freq, hamming(floor(npts/10)), floor(npts/25), floor(npts/10), spectrum_method);
+        [spectrumdata, freq] = psdrms(data, Fs, 1, high_freq, hamming(floor(npts/10)), floor(npts/25), floor(npts/10), spectrum_method);
         freqset{i} = freq(2:end);
         spectrumset{i} = spectrumdata(2:end, :);
     elseif strcmpi(spectrum_method, 'dft')
