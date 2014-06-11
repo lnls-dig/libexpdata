@@ -75,7 +75,7 @@ for i=1:ndatasets
 
     if strcmpi(data_type, 'abcd')
         data_type_name = 'ABCD amplitudes';
-        plane = {'Atenna A', 'Atenna B', 'Atenna C', 'Atenna D'};
+        plane = {'Antenna A', 'Antenna B', 'Antenna C', 'Antenna D'};
         y_unit = 'a.u.';
     elseif strcmpi(data_type, 'pos')
         data_type_name = 'Beam position';
